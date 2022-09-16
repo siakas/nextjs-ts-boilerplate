@@ -15,10 +15,23 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'react'],
+  plugins: ['@typescript-eslint', 'react', 'unused-imports'],
   rules: {
-    // 静的サイト構築にともなう img タグの記述許可
+    /* 静的サイト構築にともなう img タグの記述許可 */
     '@next/next/no-img-element': 'off',
+
+    /* unused-imports 向けの設定 */
+    '@typescript-eslint/no-unused-vars': 'off', // or 'no-unused-vars': 'off'
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
+    ],
   },
   overrides: [],
 }
