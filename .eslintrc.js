@@ -113,7 +113,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/*.tsx'],
+      files: ['**/*.ts', '**/*.tsx'],
       rules: {
         /* TypeScript では PropTypes による型チェックは不要 */
         'react/prop-types': 'off',

@@ -4,12 +4,26 @@
   "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
     "source.addMissingImports": true,
-    "source.fixAll.eslint": true
+
+    // ファイル保存時、ESLint による自動フォーマット
+    "source.fixAll.eslint": true,
+
+    // ファイル保存時、Stylelint による自動フォーマット
+    "source.fixAll.stylelint": true
   },
   "javascript.preferences.importModuleSpecifier": "non-relative",
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  "[json]": {
-    "editor.formatOnSave": false,
-    "editor.formatOnPaste": false
-  }
+
+  // VS Code の CSS, SCSS の Lint オフ
+  // Stylelint とのバッティング回避
+  "css.validate": false,
+  "scss.validate": false,
+
+  // Stylelint のフォーマットを実行する拡張子を指定
+  "stylelint.validate": ["css", "scss"]
+
+  // "[json]": {
+  //   "editor.formatOnSave": false,
+  //   "editor.formatOnPaste": false
+  // }
 }
