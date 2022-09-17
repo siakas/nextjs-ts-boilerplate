@@ -19,6 +19,11 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'unused-imports'],
   rules: {
+    /* React v17 以降で eslint-plugin-react を使用している場合の設定 */
+    /* 下記を OFF にすることで不要なエラーを回避 */
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
+
     /* 静的サイト構築にともなう img タグの記述許可 */
     '@next/next/no-img-element': 'off',
 
