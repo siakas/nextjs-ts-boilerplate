@@ -17,7 +17,13 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'unused-imports'],
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'react-hooks',
+    'import',
+    'unused-imports',
+  ],
   ignorePatterns: ['build', 'dist'],
   rules: {
     /* React v17 以降で eslint-plugin-react を使用している場合の設定 */
@@ -53,6 +59,55 @@ module.exports = {
         varsIgnorePattern: '^_',
         args: 'after-used',
         argsIgnorePattern: '^_',
+      },
+    ],
+
+    /* import の自動ソートに関する設定 */
+    'import/newline-after-import': 'error', // 最後の import のあとに空行を追加
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          ['parent', 'sibling'],
+          'object',
+          'type',
+          'index',
+        ],
+        'newlines-between': 'always',
+        pathGroupsExcludedImportTypes: ['builtin'],
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+        pathGroups: [
+          // react 関連のモジュールを external より前にする
+          {
+            pattern: '{react,react-dom/**,react-router-dom,next/**}',
+            group: 'builtin',
+            position: 'before',
+          },
+          // `@/context`, `@/hooks`, `@/utils` の import をグルーピング
+          {
+            pattern: '{@/context/**,@/hooks/**,@/utils/**}',
+            group: 'internal',
+            position: 'before',
+          },
+          // `@/components`, `@/pages` の import をグルーピング
+          {
+            pattern: '{@/components/**,@/pages/**}',
+            group: 'internal',
+            position: 'before',
+          },
+          // CSS module を一番最後に
+          {
+            pattern: '@/styles/**/*.module.{scss,css}',
+            group: 'index',
+            position: 'after',
+          },
+        ],
       },
     ],
   },
