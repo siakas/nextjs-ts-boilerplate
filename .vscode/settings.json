@@ -20,7 +20,10 @@
   "scss.validate": false,
 
   // Stylelint のフォーマットを実行する拡張子を指定
-  "stylelint.validate": ["css", "scss"]
+  "stylelint.validate": ["css", "scss", "postcss"],
+
+  // Stylelint の実行パスを指定（Path 指定がないとローカル環境で Stylelint が動作しない場合がある）
+  "stylelint.stylelintPath": "node_modules/stylelint"
 
   // "[json]": {
   //   "editor.formatOnSave": false,

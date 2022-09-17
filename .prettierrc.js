@@ -16,5 +16,11 @@ module.exports = {
         printWidth: 360,
       },
     },
+    {
+      files: ['*.css', '*.scss'],
+      options: {
+        singleQuote: false,
+      },
+    },
   ],
 }
