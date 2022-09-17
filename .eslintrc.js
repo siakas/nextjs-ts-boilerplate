@@ -7,6 +7,7 @@ module.exports = {
     'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'standard-with-typescript',
     'prettier',
   ],
@@ -14,8 +15,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: './tsconfig.json',
   },
-  plugins: ['@typescript-eslint', 'react', 'unused-imports'],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'unused-imports'],
   rules: {
     /* 静的サイト構築にともなう img タグの記述許可 */
     '@next/next/no-img-element': 'off',
