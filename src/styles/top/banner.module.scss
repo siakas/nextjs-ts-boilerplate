@@ -1,0 +1,40 @@
+.container {
+  padding: 6rem var(--sidePadding);
+  background: url('/assets/img/banner.jpg');
+  background-size: cover;
+  border-radius: 1rem;
+  color: var(--brown);
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: var(--maxWidth);
+  }
+
+  :global(.btn.btn-dark) {
+    --bgcolor: var(--brown);
+    --color: var(--yellow);
+  }
+}
+
+.hdg {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+@media (max-width: 36rem) {
+  .container {
+    aspect-ratio: 0.75;
+    background: url('/assets/img/banner-sm.jpg');
+    background-size: cover;
+    background-position: center;
+
+    div {
+      align-items: center;
+      text-align: center;
+    }
+  }
+}

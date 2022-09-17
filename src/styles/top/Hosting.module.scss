@@ -1,0 +1,29 @@
+.container {
+  padding: 6rem var(--sidePadding);
+  background: url('/assets/img/host.jpg');
+  background-size: cover;
+  background-position: 33% center;
+  border-radius: 1rem;
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  div {
+    max-width: var(--maxWidth);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+}

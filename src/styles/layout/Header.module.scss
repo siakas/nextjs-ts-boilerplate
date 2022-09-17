@@ -1,0 +1,30 @@
+.header {
+  position: fixed;
+  top: 0;
+  color: #fafafc;
+  padding: 1.5rem var(--sidePadding);
+  width: 100%;
+  z-index: 10;
+  transition: background 0.2s, border-bottom 0.2s;
+
+  > div {
+    flex: 0 0 20%;
+  }
+
+  :global(.inputFocus) & {
+    color: var(--dark);
+  }
+
+  &:global(.scrolled):not(.inputFocus) {
+    background: var(--light);
+    color: var(--dark);
+    border-bottom: 2px solid var(--gray);
+  }
+}
+
+.inner {
+  max-width: var(--containerWidth);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}

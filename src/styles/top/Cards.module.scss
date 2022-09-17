@@ -1,0 +1,58 @@
+.cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: -1.5rem;
+  padding: 1.5rem 0;
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: none;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  span {
+    margin-top: 0.75rem;
+
+    h3 {
+      font-size: 1.25rem;
+    }
+  }
+
+  img {
+    border-radius: 1rem;
+    width: 100%;
+    transition: all 0.2s;
+  }
+
+  &:hover img {
+    transform: scale(0.95);
+  }
+}
+
+.img {
+  position: relative;
+
+  img {
+    width: 100%;
+
+    &:first-child {
+      position: absolute !important;
+      overflow: visible !important;
+      width: 100%;
+    }
+  }
+
+  :global(img.shadow) {
+    position: absolute;
+    filter: blur(1rem) brightness(80%);
+    transform: translateY(0.5rem) scaleX(0.9);
+    z-index: -1;
+    opacity: 0.6;
+  }
+}

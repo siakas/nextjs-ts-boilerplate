@@ -1,0 +1,40 @@
+.hero {
+  background: linear-gradient(to bottom, #0a0c2c80 3rem, transparent 10rem),
+    url('/assets/img/hero.jpg');
+  background-position: center, bottom left;
+  background-size: cover, cover;
+  height: fit-content;
+  color: var(--light);
+  padding: 15rem var(--sidePadding) 6rem;
+}
+
+.inner {
+  display: flex;
+  max-width: var(--containerWidth);
+  margin: 0 auto;
+
+  div {
+    max-width: var(--maxWidth);
+  }
+
+  h1 {
+    font-weight: 900;
+    font-size: clamp(2rem, 5.5vw, 3.25rem);
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 36rem) {
+  .hero {
+    background: linear-gradient(to bottom, #0a0c2c80 3rem, transparent),
+      url('/assets/img/hero-sm.jpg');
+    background-position: center, bottom left;
+    background-size: cover, cover;
+    align-items: flex-start;
+    padding-top: 7.5rem;
+    height: 75vh;
+    max-height: 720px;
+  }
+}

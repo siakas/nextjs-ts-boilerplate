@@ -1,0 +1,49 @@
+.sitemap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+  }
+}
+
+.list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  li {
+    padding: 0.25rem 0;
+    font-size: 0.85rem;
+
+    a {
+      opacity: 0.8;
+      transition: all 0.2s;
+      width: fit-content;
+
+      &:hover {
+        opacity: 1;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (min-width: 81rem) {
+  .list {
+    li {
+      &:global(.lg-hidden) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    height: 2rem;
+    color: #fafafc;
+    transition: color 0.2s;
+
+    :global(.scrolled) & {
+      color: var(--red);
+    }
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-left: 0.5rem;
+  }
+}

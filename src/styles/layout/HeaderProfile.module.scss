@@ -1,0 +1,45 @@
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  white-space: nowrap;
+
+  svg {
+    height: 1.15rem;
+  }
+
+  a {
+    margin-right: 1.5rem;
+  }
+}
+
+.globe {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+
+.user {
+  background: #fafafc;
+  border-radius: 99px;
+  padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+
+  :global(.userIcon) {
+    background: #2e2e48;
+    border-radius: 99px;
+    height: 1.5rem;
+    width: 1.5rem;
+    color: #fafafc;
+  }
+
+  :global(.scrolled) & {
+    box-shadow: 0 0 0 2px var(--gray);
+  }
+
+  :global(.menu) {
+    color: #2e2e48;
+    margin-right: 0.5rem;
+  }
+}

@@ -1,0 +1,41 @@
+.bottom {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top: 1px solid #0002;
+  flex: 0 0 100%;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+
+  a {
+    margin-left: 0.5rem;
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--red);
+    }
+  }
+
+  svg {
+    height: 1rem;
+
+    &:global(.globe) {
+      margin-right: 0.1rem;
+    }
+
+    &:global(.doller) {
+      margin-right: -0.1rem;
+    }
+  }
+
+  span + span {
+    margin-left: 1rem;
+  }
+
+  p,
+  span {
+    display: flex;
+    align-items: center;
+  }
+}

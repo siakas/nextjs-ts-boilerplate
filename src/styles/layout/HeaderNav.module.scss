@@ -1,0 +1,39 @@
+.nav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  transition: all 0.2s;
+
+  a + a {
+    margin-left: 1.5rem;
+  }
+
+  a {
+    position: relative;
+  }
+
+  a::before {
+    position: absolute;
+    content: '';
+    width: 1.5rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--light);
+    bottom: -0.5rem;
+    left: calc(50% - 0.75rem);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s;
+  }
+
+  a:hover::before,
+  :global(a.active::before) {
+    transform: scaleX(1);
+  }
+
+  :global(.scrolled) & {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
