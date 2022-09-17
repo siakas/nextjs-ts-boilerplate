@@ -85,7 +85,7 @@ module.exports = {
         pathGroups: [
           // react 関連のモジュールを external より前にする
           {
-            pattern: '{react,react-dom/**,react-router-dom,next/**}',
+            pattern: '{react,react-dom/**,react-router-dom,next,next/**}',
             group: 'builtin',
             position: 'before',
           },
