@@ -6,4 +6,5 @@ public/
 package.json
 package-lock.json
 yarn.lock
-.eslintrc.js
+# .eslintrc.js
+# .stylelint.js
