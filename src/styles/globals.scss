@@ -1,9 +1,9 @@
 *,
 *::before,
 *::after {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
 
 :root {
@@ -14,18 +14,18 @@
   --light: #fafafc;
   --gray: #efeff5;
   --white: #fff;
-  --sidePadding: 3rem;
-  --maxWidth: 40%;
-  --containerWidth: 1200px;
+  --side-padding: 3rem;
+  --max-width: 40%;
+  --container-width: 1200px;
 }
 
 body {
   font-family: 'Nunito Sans', sans-serif;
-  background: var(--light);
-  color: var(--dark);
-  line-height: 1.5;
-  -webkit-tap-highlight-color: transparent;
   font-size: 1rem;
+  line-height: 1.5;
+  color: var(--dark);
+  background: var(--light);
+  -webkit-tap-highlight-color: transparent;
 
   &.dark {
     --dark: #fafafc;
@@ -51,16 +51,17 @@ button {
 .btn {
   --color: var(--dark);
   --bgcolor: var(--light);
+
   display: inline-block;
-  white-space: nowrap;
   padding: 0.75rem 1.5rem;
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--color);
+  white-space: nowrap;
   background: var(--bgcolor);
   border-radius: 0.66rem;
+  box-shadow: 0 0.5rem 1.5rem -0.5rem currentcolor;
   transition: all 0.2s;
-  box-shadow: 0 0.5rem 1.5rem -0.5rem currentColor;
 
   &.btn-dark {
     --color: var(--light);
@@ -79,7 +80,7 @@ button {
 
 section {
   &:not(.hero) {
-    margin: 3rem var(--sidePadding);
+    margin: 3rem var(--side-padding);
   }
 
   &:last-of-type {
@@ -87,8 +88,8 @@ section {
   }
 
   h2 {
-    font-weight: 800;
     font-size: 1.75rem;
+    font-weight: 800;
   }
 }
 
@@ -104,8 +105,8 @@ section {
 
 @media (max-width: 36rem) {
   :root {
-    --sidePadding: 1.5rem;
-    --maxWidth: 100%;
+    --side-padding: 1.5rem;
+    --max-width: 100%;
   }
 
   ::-webkit-scrollbar {
@@ -113,8 +114,8 @@ section {
   }
 
   .btn {
-    font-size: 1rem;
     padding: 0.5rem 1rem;
+    font-size: 1rem;
   }
 
   section h2 {
