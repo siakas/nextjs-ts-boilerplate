@@ -13,11 +13,12 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: 12,
     sourceType: 'module',
     project: './tsconfig.json',
   },
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'unused-imports'],
+  ignorePatterns: ['build', 'dist'],
   rules: {
     /* React v17 以降で eslint-plugin-react を使用している場合の設定 */
     /* 下記を OFF にすることで不要なエラーを回避 */
