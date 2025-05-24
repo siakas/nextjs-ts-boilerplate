@@ -1,17 +1,16 @@
 import { FlatCompat } from "@eslint/eslintrc";
-// import prettier from "eslint-config-prettier/flat";
-// import tailwind from "eslint-plugin-tailwindcss";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
-  baseDirectory: import.meta.dirname,
+  baseDirectory: __dirname,
 });
 
 const eslintConfig = [
-  ...compat.config({
-    extends: ["next/core-web-vitals", "next/typescript"],
-  }),
-  // ...tailwind.configs["flat/recommended"],
-  // prettier,
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
 export default eslintConfig;
