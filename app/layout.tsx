@@ -1,3 +1,5 @@
+import { ConfirmDialog } from "@/components/common/dialog/ConfirmDialog";
+import { WholeLayout } from "@/components/common/layout/WholeLayout";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -25,9 +27,10 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-[family-name:var(--font-geist-sans)] antialiased`}
       >
-        {children}
+        <WholeLayout>{children}</WholeLayout>
+        <ConfirmDialog></ConfirmDialog>
       </body>
     </html>
   );
